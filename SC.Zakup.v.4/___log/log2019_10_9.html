@@ -1,0 +1,20 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Incorrect syntax near '.'.<br>
+select nl.ID, nl.Postup_ID, p.Nomenkl, nl.FixedAsset 
+						nl.Quantity, nl.Price, p.Quantity - p.QuantityMoved QuantityOnSklad
+                    from NakladLine nl 
+						join Postupleniya p on p.ID = nl.Postup_ID
+                    where Naklad_ID = 12<br>
+--[09.10.2019 0:26:17]--------------<br>
+
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Incorrect syntax near '.'.<br>
+select nl.ID, nl.Postup_ID, p.Nomenkl, nl.FixedAsset 
+						nl.Quantity, nl.Price, p.Quantity - p.QuantityMoved QuantityOnSklad
+                    from NakladLine nl 
+						join Postupleniya p on p.ID = nl.Postup_ID
+                    where Naklad_ID = 12<br>
+--[09.10.2019 0:26:38]--------------<br>
+

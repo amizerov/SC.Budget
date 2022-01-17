@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwissClean", "SwissClean.csproj", "{979956BF-8E5D-4CD1-A0A2-1E32BA49AC09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "amGlobals", "..\amGlobals\amGlobals.csproj", "{A69600FB-8789-4A7F-AED7-F22B6AEE9AB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Designer|Any CPU = Designer|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{979956BF-8E5D-4CD1-A0A2-1E32BA49AC09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{979956BF-8E5D-4CD1-A0A2-1E32BA49AC09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{979956BF-8E5D-4CD1-A0A2-1E32BA49AC09}.Designer|Any CPU.ActiveCfg = Debug|Any CPU
+		{979956BF-8E5D-4CD1-A0A2-1E32BA49AC09}.Designer|Any CPU.Build.0 = Debug|Any CPU
+		{979956BF-8E5D-4CD1-A0A2-1E32BA49AC09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{979956BF-8E5D-4CD1-A0A2-1E32BA49AC09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A69600FB-8789-4A7F-AED7-F22B6AEE9AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69600FB-8789-4A7F-AED7-F22B6AEE9AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69600FB-8789-4A7F-AED7-F22B6AEE9AB3}.Designer|Any CPU.ActiveCfg = Designer|Any CPU
+		{A69600FB-8789-4A7F-AED7-F22B6AEE9AB3}.Designer|Any CPU.Build.0 = Designer|Any CPU
+		{A69600FB-8789-4A7F-AED7-F22B6AEE9AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69600FB-8789-4A7F-AED7-F22B6AEE9AB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F6D6AB4-B8B3-436C-91B2-DF88F32778E1}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://server.ultrazoom.ru:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\amGlobals\\amGlobals.csproj
+		SccProjectName1 = ../amGlobals
+		SccLocalPath1 = ..\\amGlobals
+		SccProjectUniqueName2 = SwissClean.csproj
+		SccLocalPath2 = .
+	EndGlobalSection
+EndGlobal

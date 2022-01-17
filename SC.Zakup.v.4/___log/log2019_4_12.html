@@ -1,0 +1,50 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Cannot insert the value NULL into column 'Schet_ID', table 'SwissClean.dbo.Oplata'; column does not allow nulls. INSERT fails.
+The statement has been terminated.<br>
+insert Oplata(Summa, Data) values(0, '2019-04-12')
+                            select @@IDENTITY<br>
+--[12.04.2019 10:33:18]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Incorrect syntax near 'whwre'.<br>
+delete Oplata whwre ID = 11<br>
+--[12.04.2019 11:15:54]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Invalid object name 'Opdata'.<br>
+insert Opdata(Schet_ID, Summa, Data) values(57, 3422, '2018-12-24')<br>
+--[12.04.2019 13:49:51]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Invalid object name 'Opdata'.<br>
+insert Opdata(Schet_ID, Summa, Data) values(59, 24500, '2019-01-08')<br>
+--[12.04.2019 13:49:55]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.<br>
+insert Oplata(Schet_ID, Summa, Data) values(251, 892438,5, '2019-01-08')<br>
+--[12.04.2019 13:50:23]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+There are fewer columns in the INSERT statement than values specified in the VALUES clause. The number of values in the VALUES clause must match the number of columns specified in the INSERT statement.<br>
+insert Oplata(Schet_ID, Summa, Data) values(55, 13311,87, '2019-01-16')<br>
+--[12.04.2019 13:50:30]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Invalid column name 'Summa'.<br>
+if Summa > 0 insert Oplata(Schet_ID, Summa, Data) values(57, 3422.00, '2018-12-24')<br>
+--[12.04.2019 13:53:47]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Invalid column name 'Summa'.<br>
+if Summa > 0 insert Oplata(Schet_ID, Summa, Data) values(59, 24500.00, '2019-01-08')<br>
+--[12.04.2019 13:53:54]--------------<br>
+

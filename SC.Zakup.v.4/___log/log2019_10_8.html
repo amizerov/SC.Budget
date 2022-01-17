@@ -1,0 +1,26 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) The multi-part identifier "nl.ID" could not be bound.
+The multi-part identifier "nl.Quantity" could not be bound.
+The multi-part identifier "nl.Price" could not be bound.<br>
+select nl.ID, Postup_ID, p.Nomenkl, nl.Quantity, nl.Price, p.Quantity - p.QuantityMoved QuantityOnSklad
+                    from Nakladnaya n join NakladLine l on n.ID = l.Naklad_ID
+                    join Postupleniya p on p.ID = l.Postup_ID
+                    where Object_ID = 119
+						and ((year(n.DocDate) = year(GETDATE()) and month(n.DocDate) = month(GETDATE()))
+							or l.FixedAsset = 1)<br>
+--[08.10.2019 23:35:53]--------------<br>
+
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) The multi-part identifier "nl.ID" could not be bound.
+The multi-part identifier "nl.Quantity" could not be bound.
+The multi-part identifier "nl.Price" could not be bound.<br>
+select nl.ID, Postup_ID, p.Nomenkl, nl.Quantity, nl.Price, p.Quantity - p.QuantityMoved QuantityOnSklad
+                    from Nakladnaya n join NakladLine l on n.ID = l.Naklad_ID
+                    join Postupleniya p on p.ID = l.Postup_ID
+                    where Object_ID = 118
+						and ((year(n.DocDate) = year(GETDATE()) and month(n.DocDate) = month(GETDATE()))
+							or l.FixedAsset = 1)<br>
+--[08.10.2019 23:43:52]--------------<br>
+

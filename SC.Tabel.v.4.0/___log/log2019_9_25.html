@@ -1,0 +1,34 @@
+<br>
+--[datopen(4)(1)]-------------<br>
+Ошибка арифметического переполнения при преобразовании numeric к типу данных numeric.
+Выполнение данной инструкции было прервано.<br>
+if exists (select id from ResOP where id = 63)
+		update ResOP set
+			Month = '20190925 01:15', Resource_ID = 32, Object_ID = 258, Position_ID = -1, Avans = 99999999999999999999999999, Penalty = 0.00, 
+			Premium = 0.00, Comment = '', RateDays = 5, FactDays = 21, FactSalary = -99999999999999999999972001.80
+		where id = 63
+	else
+		insert ResOP(Month, Resource_ID, Object_ID, Position_ID, Avans, Penalty, Premium, Comment, RateDays, FactDays, FactSalary)
+		values('20190925 01:15', 32, 258, -1, 99999999999999999999999999, 0.00, 0.00, '', 5, 21, -99999999999999999999972001.80) select @@IDENTITY<br>
+--[25.09.2019 1:15:58]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Ошибка арифметического переполнения при преобразовании numeric к типу данных numeric.
+Выполнение данной инструкции было прервано.<br>
+if exists (select id from ResOP where id = 59)
+		update ResOP set
+			Month = '20190925 01:18', Resource_ID = 32, Object_ID = 258, Position_ID = -1, Avans = 999999999999999999, Penalty = 0.00, 
+			Premium = 0.00, Comment = '', RateDays = 0, FactDays = 17, FactSalary = 0
+		where id = 59
+	else
+		insert ResOP(Month, Resource_ID, Object_ID, Position_ID, Avans, Penalty, Premium, Comment, RateDays, FactDays, FactSalary)
+		values('20190925 01:18', 32, 258, -1, 999999999999999999, 0.00, 0.00, '', 0, 17, 0) select @@IDENTITY<br>
+--[25.09.2019 1:18:20]--------------<br>
+
+<br>
+--[datopen(12)(0)]-------------<br>
+При установлении соединения с SQL Server произошла ошибка, связанная с сетью или с определенным экземпляром. Сервер не найден или недоступен. Убедитесь, что имя экземпляра указано правильно и что на SQL Server разрешены удаленные соединения. (provider: Named Pipes Provider, error: 40 - Не удалось открыть подключение к SQL Server)<br>
+Data Source=mizeroff.net;Initial Catalog=SwissClean;User ID=scuser;Password=!QAZ1qaz;Connection Timeout=10<br>
+--[25.09.2019 9:26:54]--------------<br>
+

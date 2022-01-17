@@ -1,0 +1,44 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Не удалось привязать составной идентификатор "pr.IsDeleted".<br>
+with objs as (
+	 select 1 Type, 'Object ' + CAST(obj.ID AS nvarchar) ID,
+		 'Object ' + CAST(obj.ID AS nvarchar) Group_ID, null ParentID, 
+		 null ResOP_ID, obj.ID Object_ID, obj.Address ObjectNameForResOp, obj.Manager_ID Manager_ID,
+		 0 IsStaff, null PositionID, null Resource_ID, obj.Address Name,
+		 'Выплат: ' + CAST(Count(resOp.Id) AS nvarchar) Phone,
+		 null PositionName, SUM(okl.Summa) Salary, SUM(res.OfficialSalary) OfficialSalary, SUM(ResOP.RateDays) RateDays, 
+		 SUM(ResOP.FactDays) FactDays, SUM(ResOP.FactSalary) FactSalary, SUM(ResOP.Avans) Avans, SUM(ResOP.Penalty) Penalty, 
+		 SUM(ResOP.Premium) Premium, null Comment, null Month, SUM(res.MedBook) MedBook, SUM(res.SpecWear) SpecWear
+	 from Object obj
+		 left join Project pr on obj.Project_ID = pr.ID
+		 left join (select * from ResOP where Month(ResOP.Month) = 10 and YEAR(ResOP.Month) = 2019) resOp on resOp.Object_ID = obj.ID
+		 left join Position pos on pos.ID = resOp.Position_ID
+		 left join Resource res on res.ID = resOp.Resource_ID
+		 left join Oklad okl on okl.Object_ID = obj.ID and okl.Position_ID = pos.ID
+	 where obj.Manager_ID = 9 and pr.IsDeleted = 0 and obj.IsDeleted = 0
+	 group by obj.ID, obj.Address, obj.Manager_ID
+),
+resOps as (
+		 select 2 Type, 'ResOp ' + CAST(resOp.ID AS nvarchar) ID,
+		'ResOp ' + CAST(resOp.ID AS nvarchar) Group_ID,
+		 'Object ' + CAST(obj.ID AS nvarchar) ParentID, 
+		 resOp.ID ResOP_ID, obj.ID Object_ID, obj.Address ObjectNameForResOp, obj.Manager_ID Manager_ID,
+		 case when res.Manager_ID is null then 1 else 0 end IsStaff,
+		  pos.ID PositionID, res.ID Resource_ID, res.Name Name, res.Phone Phone, 
+		 pos.Name PositionName, okl.Summa Salary, res.OfficialSalary OfficialSalary, ResOP.RateDays RateDays, 
+		 ResOP.FactDays FactDays, ResOP.FactSalary FactSalary, ResOP.Avans Avans, 
+		 ResOP.Penalty Penalty, ResOP.Premium Premium, ResOP.Comment Comment, ResOP.Month Month, 
+		 res.MedBook MedBook, res.SpecWear SpecWear
+	 from (select * from ResOP where Month(ResOP.Month) = 10 and YEAR(ResOP.Month) = 2019) resOp
+		 left join Object obj on resOp.Object_ID = obj.ID
+		 left join Position pos on pos.ID = resOp.Position_ID
+		 left join Oklad okl on okl.Object_ID = obj.ID and okl.Position_ID = pos.ID
+		 left join Resource res on res.ID = resOp.Resource_ID
+	 where obj.Manager_ID = 9 and pr.IsDeleted = 0 and obj.IsDeleted = 0
+)
+select * from objs
+union all select * from resOps
+order by Name<br>
+--[03.10.2019 14:48:37]--------------<br>
+

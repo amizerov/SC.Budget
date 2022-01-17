@@ -1,0 +1,44 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Invalid column name 'lFixedAsset'.<br>
+
+                    select 
+                    Nomenkl [Номенклатура], l.Quantity [Количество], 
+                    l.Price [Цена], l.Quantity * l.Price [Сумма],
+                    lFixedAsset [ОС],
+                    n.DocDate, n.DocNumber, Naklad, Schet, n.[User]
+                    from Nakladnaya n join NakladLine l on n.ID = l.Naklad_ID
+                    join Postupleniya p on p.ID = l.Postup_ID
+                    where Object_ID = 1278
+                <br>
+--[25.09.2019 7:43:04]--------------<br>
+
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Ambiguous column name 'ID'.
+Ambiguous column name 'Status'.
+Ambiguous column name 'User'.<br>
+
+                
+                    select ID, DocDate [Дата], DocNumber [Номер], o.Name + ' - ' + o.Address [Объект],
+                    Status, [User]
+                    from Nakladnaya n join Object o on o.ID = n.Object_ID
+                    order by DocDate desc
+                
+                <br>
+--[25.09.2019 9:07:24]--------------<br>
+
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Ambiguous column name 'Status'.
+Ambiguous column name 'User'.<br>
+
+                
+                    select n.ID, DocDate [Дата], DocNumber [Номер], o.Name + ' - ' + o.Address [Объект],
+                    Status, [User]
+                    from Nakladnaya n join Object o on o.ID = n.Object_ID
+                    order by DocDate desc
+                
+                <br>
+--[25.09.2019 9:09:35]--------------<br>
+

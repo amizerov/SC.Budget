@@ -1,0 +1,20 @@
+﻿<XtraSerializer version="1.0" application="Appearances">
+  <property name="HideSelectionRow" iskey="true" value="HideSelectionRow">
+    <property name="Options" isnull="true" iskey="true">
+      <property name="UseBackColor">true</property>
+    </property>
+    <property name="BackColor">100, 201, 222, 245</property>
+  </property>
+  <property name="FocusedRow" iskey="true" value="FocusedRow">
+    <property name="Options" isnull="true" iskey="true">
+      <property name="UseBackColor">true</property>
+    </property>
+    <property name="BackColor">100, 201, 222, 245</property>
+  </property>
+  <property name="SelectedRow" iskey="true" value="SelectedRow">
+    <property name="Options" isnull="true" iskey="true">
+      <property name="UseBackColor">true</property>
+    </property>
+    <property name="BackColor">100, 201, 222, 245</property>
+  </property>
+</XtraSerializer>

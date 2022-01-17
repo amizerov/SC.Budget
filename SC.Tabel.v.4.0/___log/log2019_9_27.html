@@ -1,0 +1,20 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Неправильный синтаксис около ключевого слова "is".<br>
+select * from Resource
+						whereManager_ID is not null  OBJECT_ID in (1107)<br>
+--[27.09.2019 1:10:22]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Incorrect syntax near '00'.<br>
+if exists (select id from ResOP where id = 24)
+		update ResOP set
+			Month = '20190904 14:24', Resource_ID = 6, Object_ID = 1105, Position_ID = 22, Avans = 0,00, Penalty = 20, 
+			Premium = 0,00, Comment = '', RateDays = 30, FactDays = 0, FactSalary = 0
+		where id = 24
+	else
+		insert ResOP(Month, Resource_ID, Object_ID, Position_ID, Avans, Penalty, Premium, Comment, RateDays, FactDays, FactSalary)
+		values('20190904 14:24', 6, 1105, 22, 0,00, 20, 0,00, '', 30, 0, 0) select @@IDENTITY<br>
+--[27.09.2019 2:41:49]--------------<br>
+

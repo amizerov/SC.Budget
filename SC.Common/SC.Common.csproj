@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA5792A0-3C8E-41F6-8804-6AFA0AF1F37F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC.Common</RootNamespace>
+    <AssemblyName>SC.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.3.5\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="linq2db, Version=3.6.0.0, Culture=neutral, PublicKeyToken=e41013125f9e410a, processorArchitecture=MSIL">
+      <HintPath>..\packages\linq2db.3.6.0\lib\net472\linq2db.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dal\ConnectionString.cs" />
+    <Compile Include="Dal\DbContext.cs" />
+    <Compile Include="Dal\XmlRepository.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\ApplicationUser.cs" />
+    <Compile Include="Model\AppSettings.cs" />
+    <Compile Include="Model\Bug.cs" />
+    <Compile Include="Model\BugIncident.cs" />
+    <Compile Include="Model\Buyer.cs" />
+    <Compile Include="Model\DetailProda.cs" />
+    <Compile Include="Model\NakladLineInvented.cs" />
+    <Compile Include="Model\Nomenklatura.cs" />
+    <Compile Include="Model\ObjectProjectTree.cs" />
+    <Compile Include="Model\SkladPosition.cs" />
+    <Compile Include="Model\StDoho.cs" />
+    <Compile Include="Model\TabelClosed.cs" />
+    <Compile Include="Model\SchetLine.cs" />
+    <Compile Include="Model\Trello.cs" />
+    <Compile Include="Model\VersionHistory.cs" />
+    <Compile Include="Model\Firma.cs" />
+    <Compile Include="Model\Modules.cs" />
+    <Compile Include="Model\Nakladnaya.cs" />
+    <Compile Include="Model\Note.cs" />
+    <Compile Include="Model\Oklad.cs" />
+    <Compile Include="Model\OperationHistory.cs" />
+    <Compile Include="Model\OplataProda.cs" />
+    <Compile Include="Model\Oplata.cs" />
+    <Compile Include="Model\Position.cs" />
+    <Compile Include="Model\Object.cs" />
+    <Compile Include="Model\OperationCash.cs" />
+    <Compile Include="Model\Postupleniya.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\DetailClass.cs" />
+    <Compile Include="Model\Detail.cs" />
+    <Compile Include="Model\NakladLine.cs" />
+    <Compile Include="Model\ResOpUnits.cs" />
+    <Compile Include="Model\ResOpUnitService.cs" />
+    <Compile Include="Model\ResOPViewModel.cs" />
+    <Compile Include="Model\Resource.cs" />
+    <Compile Include="Model\Scheta.cs" />
+    <Compile Include="Model\SchetaProda.cs" />
+    <Compile Include="Model\SchetProdaLine.cs" />
+    <Compile Include="Model\Operation.cs" />
+    <Compile Include="Model\RequestOP.cs" />
+    <Compile Include="Model\ResOP.cs" />
+    <Compile Include="Model\RestDay.cs" />
+    <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\StRash.cs" />
+    <Compile Include="Model\Supplier.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Adapter.cs" />
+    <Compile Include="Services\ColorService.cs" />
+    <Compile Include="Services\DateService.cs" />
+    <Compile Include="Services\Email.cs" />
+    <Compile Include="Services\CryptorService.cs" />
+    <Compile Include="Services\EnumService.cs" />
+    <Compile Include="Services\ExcelService.cs" />
+    <Compile Include="Services\GridViewService.cs" />
+    <Compile Include="Services\GridViewStateSaver.cs" />
+    <Compile Include="Services\ImageService.cs" />
+    <Compile Include="Services\Interfaces.cs" />
+    <Compile Include="Services\JsonExtensions.cs" />
+    <Compile Include="Services\LayoutSaver.cs" />
+    <Compile Include="Services\Logger.cs" />
+    <Compile Include="Services\NakladLineValidator.cs" />
+    <Compile Include="Services\PivotGridService.cs" />
+    <Compile Include="Services\ReflectionService.cs" />
+    <Compile Include="Services\ScreenPrinter.cs" />
+    <Compile Include="Services\StringMethods.cs" />
+    <Compile Include="Services\TreeListService.cs" />
+    <Compile Include="Services\GlobalSettings.cs" />
+    <Compile Include="Services\WhatUpdateService.cs" />
+    <Compile Include="Services\MapperService.cs" />
+    <Compile Include="Services\MessageService.cs" />
+    <Compile Include="Services\MoneyToString.cs" />
+    <Compile Include="Services\TaskbarProgress.cs" />
+    <Compile Include="Services\TreeListStateSaver.cs" />
+    <Compile Include="Services\ValidateService.cs" />
+    <Compile Include="Views\FrmChangeEncryptPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmChangeEncryptPassword.Designer.cs">
+      <DependentUpon>FrmChangeEncryptPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMessage.Designer.cs">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmNewNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmNewNote.Designer.cs">
+      <DependentUpon>FrmNewNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmNewRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmNewRequest.Designer.cs">
+      <DependentUpon>FrmNewRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmNotes.Designer.cs">
+      <DependentUpon>FrmNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmPassword.Designer.cs">
+      <DependentUpon>FrmPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmReportBug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmReportBug.Designer.cs">
+      <DependentUpon>FrmReportBug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSelectObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSelectObj.Designer.cs">
+      <DependentUpon>FrmSelectObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WaitForm0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WaitForm0.Designer.cs">
+      <DependentUpon>WaitForm0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sql\LastRequest_Out.sql" />
+    <EmbeddedResource Include="Views\FrmChangeEncryptPassword.resx">
+      <DependentUpon>FrmChangeEncryptPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmNewNote.resx">
+      <DependentUpon>FrmNewNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmNewRequest.resx">
+      <DependentUpon>FrmNewRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmNotes.resx">
+      <DependentUpon>FrmNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmPassword.resx">
+      <DependentUpon>FrmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmReportBug.resx">
+      <DependentUpon>FrmReportBug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmSelectObj.resx">
+      <DependentUpon>FrmSelectObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WaitForm0.resx">
+      <DependentUpon>WaitForm0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sql\Managers.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sql\Operations.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sql\Positions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SC.Common.Model.CNoteDto.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.ObjectProjectTree.datasource" />
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sql\Bosses.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Input.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SCAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_user.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\security_unlock.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_security_permission.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sql\DeleteEmptyNaklads.sql" />
+    <None Include="Resources\SCAS_DemoCover1.png" />
+    <EmbeddedResource Include="Sql\ObjectProjectTree.sql" />
+    <None Include="Resources\sklad.png" />
+    <None Include="Resources\НетФильтра.png" />
+    <None Include="Resources\my.png" />
+    <None Include="Resources\noMy.png" />
+    <EmbeddedResource Include="Sql\Scheta.sql" />
+    <Content Include="Sql\Users.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,45 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Scheta_Project". The conflict occurred in database "SwissClean", table "dbo.Project", column 'ID'.
+The statement has been terminated.<br>
+SaveSchet 0, 'ММ01-000207', 42800, '2019-09-10', '2019-09-17', 0, 1183, 0, 7, 'Окей Уфа', 'Mizer'<br>
+--[24.09.2019 7:38:26]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Incorrect syntax near the keyword 'select'.
+Incorrect syntax near ')'.<br>
+
+                    if(not exists select * from SchetZakupLine where Schet_ID = 4153 and Nomenklatura = 'Костюм женский для сф.услуг василек/синий (96-100/158-164)')
+                        insert SchetZakupLine(Schet_ID, Nomenklatura, Quantity, Price) values(4153, 'Костюм женский для сф.услуг василек/синий (96-100/158-164)', 20, 1070)
+                <br>
+--[24.09.2019 9:18:00]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Incorrect syntax near the keyword 'select'.
+Incorrect syntax near ')'.<br>
+
+                    if(not exists select * from SchetZakupLine where Schet_ID = 4153 and Nomenklatura = 'Костюм женский для сф.услуг василек/синий (96-100/158-164)')
+                        insert SchetZakupLine(Schet_ID, Nomenklatura, Quantity, Price) values(4153, 'Костюм женский для сф.услуг василек/синий (96-100/158-164)', 20, 1070)
+                <br>
+--[24.09.2019 9:18:07]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Incorrect syntax near the keyword 'select'.<br>
+
+                    if not exists select * from SchetZakupLine where Schet_ID = 4153 and Nomenklatura = 'Костюм женский для сф.услуг василек/синий (96-100/158-164)'
+                        insert SchetZakupLine(Schet_ID, Nomenklatura, Quantity, Price) values(4153, 'Костюм женский для сф.услуг василек/синий (96-100/158-164)', 20, 1070)
+                <br>
+--[24.09.2019 9:20:00]--------------<br>
+
+<br>
+--[datopen(4)(1)]-------------<br>
+Incorrect syntax near the keyword 'select'.<br>
+
+                    if not exists select * from SchetZakupLine where Schet_ID = 4153 and Nomenklatura = 'Костюм женский для сф.услуг василек/синий (96-100/158-164)'
+                        insert SchetZakupLine(Schet_ID, Nomenklatura, Quantity, Price) values(4153, 'Костюм женский для сф.услуг василек/синий (96-100/158-164)', 20, 1070)
+                <br>
+--[24.09.2019 9:20:05]--------------<br>
+

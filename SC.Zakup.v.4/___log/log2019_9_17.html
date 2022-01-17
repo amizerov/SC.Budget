@@ -1,0 +1,10 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Invalid column name 'IdDeleted'.<br>
+
+                select p.ID, p.Name Proj, u.Name Ruko 
+                from Project p join [User] u on p.Rukovod_ID = u.ID
+                where IdDeleted = 0
+            <br>
+--[17.09.2019 20:16:25]--------------<br>
+

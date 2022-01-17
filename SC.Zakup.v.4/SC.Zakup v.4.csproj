@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6317B626-C095-4804-8281-3545A5B8632D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC.Zakup</RootNamespace>
+    <AssemblyName>SC.Zakup.v.4</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Покупки2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dialogs.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.3.5\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="linq2db, Version=3.6.0.0, Culture=neutral, PublicKeyToken=e41013125f9e410a, processorArchitecture=MSIL">
+      <HintPath>..\packages\linq2db.3.6.0\lib\net472\linq2db.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Naklad.cs" />
+    <Compile Include="Models\NakladAccessService.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmAddNakladLines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmAddNakladLines.Designer.cs">
+      <DependentUpon>FrmAddNakladLines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmLoadingFrom1C.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmLoadingFrom1C.Designer.cs">
+      <DependentUpon>FrmLoadingFrom1C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmLoadScheta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmLoadScheta.Designer.cs">
+      <DependentUpon>FrmLoadScheta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmNakladLineQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmNakladLineQuantity.Designer.cs">
+      <DependentUpon>FrmNakladLineQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmNewNaklad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmNewNaklad.Designer.cs">
+      <DependentUpon>FrmNewNaklad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmEditNaklad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmEditNaklad.Designer.cs">
+      <DependentUpon>FrmEditNaklad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmNewNakladInvented.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmNewNakladInvented.Designer.cs">
+      <DependentUpon>FrmNewNakladInvented.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmNewOplata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmNewOplata.Designer.cs">
+      <DependentUpon>FrmNewOplata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmNewOrEditDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmNewOrEditDetail.Designer.cs">
+      <DependentUpon>FrmNewOrEditDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSelectExcelSheetForNalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSelectExcelSheetForNalog.Designer.cs">
+      <DependentUpon>FrmSelectExcelSheetForNalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Firma.cs" />
+    <Compile Include="Models\NakLine.cs" />
+    <Compile Include="Models\Postup.cs" />
+    <Compile Include="Models\Postupleniya.cs" />
+    <Compile Include="Views\FrmNewOrEditStRash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmNewOrEditStRash.Designer.cs">
+      <DependentUpon>FrmNewOrEditStRash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmDetails.Designer.cs">
+      <DependentUpon>FrmDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmStRashs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmStRashs.Designer.cs">
+      <DependentUpon>FrmStRashs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageNaklads.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PageNaklads.Designer.cs">
+      <DependentUpon>PageNaklads.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageObjects.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PageObjects.Designer.cs">
+      <DependentUpon>PageObjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageOplatas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PageOplatas.Designer.cs">
+      <DependentUpon>PageOplatas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PagePostup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PagePostup.Designer.cs">
+      <DependentUpon>PagePostup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageScheta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PageScheta.Designer.cs">
+      <DependentUpon>PageScheta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Detail.cs" />
+    <Compile Include="Models\Object.cs" />
+    <Compile Include="Models\Oplata.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\Scheta.cs" />
+    <Compile Include="Models\Sklad.cs" />
+    <Compile Include="Models\StRash.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FrmNewOrEditSchet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmNewOrEditSchet.Designer.cs">
+      <DependentUpon>FrmNewOrEditSchet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\COM1C.cs" />
+    <Compile Include="Tools\Excel.cs" />
+    <Compile Include="Views\PageSklad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PageSklad.Designer.cs">
+      <DependentUpon>PageSklad.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\FrmAddNakladLines.resx">
+      <DependentUpon>FrmAddNakladLines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmLoadingFrom1C.resx">
+      <DependentUpon>FrmLoadingFrom1C.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmLoadScheta.resx">
+      <DependentUpon>FrmLoadScheta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmNakladLineQuantity.resx">
+      <DependentUpon>FrmNakladLineQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmNewNaklad.resx">
+      <DependentUpon>FrmNewNaklad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmEditNaklad.resx">
+      <DependentUpon>FrmEditNaklad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmNewNakladInvented.resx">
+      <DependentUpon>FrmNewNakladInvented.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmNewOplata.resx">
+      <DependentUpon>FrmNewOplata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmNewOrEditDetail.resx">
+      <DependentUpon>FrmNewOrEditDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmSelectExcelSheetForNalog.resx">
+      <DependentUpon>FrmSelectExcelSheetForNalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmNewOrEditStRash.resx">
+      <DependentUpon>FrmNewOrEditStRash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmDetails.resx">
+      <DependentUpon>FrmDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmStRashs.resx">
+      <DependentUpon>FrmStRashs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PageNaklads.resx">
+      <DependentUpon>PageNaklads.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PageObjects.resx">
+      <DependentUpon>PageObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PageOplatas.resx">
+      <DependentUpon>PageOplatas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PagePostup.resx">
+      <DependentUpon>PagePostup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PageScheta.resx">
+      <DependentUpon>PageScheta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmNewOrEditSchet.resx">
+      <DependentUpon>FrmNewOrEditSchet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PageSklad.resx">
+      <DependentUpon>PageSklad.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SC.Budget.Models.CNakladnaya.datasource" />
+    <None Include="Properties\DataSources\SC.Budget.Models.CNakLine.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CDetail.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CNakladLine.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CNakladLineInvented.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.COplata.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CPostupleniya.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CSchetLine.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CSchetLoad.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CSchet.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CNakladLineMoving.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.COplataDto.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CSkladPosition.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CStRashDto.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.ObjectProjectTree.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\edit32.png" />
+    <None Include="Resources\SCAS_DemoCover.png" />
+    <None Include="Resources\SCAS_DemoCover1.png" />
+    <None Include="Resources\Out.png" />
+    <None Include="Resources\НетФильтра.png" />
+    <None Include="Resources\Товар.png" />
+    <None Include="Resources\ОсновныеСредства.png" />
+    <None Include="Resources\Услуга.png" />
+    <None Include="Resources\Инвентарь.png" />
+    <None Include="Resources\Аренда.png" />
+    <None Include="Resources\new2.png" />
+    <None Include="Resources\update2.png" />
+    <None Include="Resources\1C_SingleImport.png" />
+    <None Include="Resources\1С1.png" />
+    <None Include="Resources\sklad.png" />
+    <None Include="Resources\my.png" />
+    <None Include="Resources\In.png" />
+    <EmbeddedResource Include="Sql\Naklads.sql" />
+    <EmbeddedResource Include="Sql\NakladLines.sql" />
+    <EmbeddedResource Include="Sql\ObjectProjectTree.sql" />
+    <None Include="Resources\noMy.png" />
+    <EmbeddedResource Include="Sql\Sklad.sql" />
+    <EmbeddedResource Include="Sql\Postupleniya.sql" />
+    <EmbeddedResource Include="Sql\UpdateQuantityMoved.sql" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\ResetSettings.png" />
+    <None Include="Resources\clearfilter_32x32.png" />
+    <None Include="Resources\clearfilter_16x16.png" />
+    <None Include="Resources\FilterToMe.png" />
+    <None Include="Resources\FilterFromMe.png" />
+    <None Include="Resources\ignoremasterfilter_32x32.png" />
+    <None Include="Resources\ignoremasterfilter_16x16.png" />
+    <None Include="Resources\sales_32x32.png" />
+    <None Include="Resources\sales_16x16.png" />
+    <None Include="Resources\project_32x32.png" />
+    <None Include="Resources\project_16x16.png" />
+    <None Include="Resources\switchtimescalesto_32x32.png" />
+    <None Include="Resources\switchtimescalesto_16x16.png" />
+    <None Include="Resources\ide_32x32.png" />
+    <None Include="Resources\ide_16x16.png" />
+    <None Include="Resources\employeequickwelcome.svg" />
+    <None Include="Resources\bo_order.svg" />
+    <None Include="Resources\shipment.svg" />
+    <None Include="Resources\addtext_32x32.png" />
+    <EmbeddedResource Include="Sql\Oplatas.sql" />
+    <None Include="Resources\neworder.svg" />
+    <None Include="Resources\archive.png" />
+    <None Include="Resources\packageproduct_32x32.png" />
+    <None Include="Resources\packageproduct_16x16.png" />
+    <None Include="Resources\merge_32x32.png" />
+    <None Include="Resources\merge_32x321.png" />
+    <None Include="Resources\merge_16x16.png" />
+    <EmbeddedResource Include="Sql\SkladGrouping.sql" />
+    <None Include="Resources\kpi_32x32.png" />
+    <None Include="Resources\kpi_16x16.png" />
+    <None Include="Resources\createpiechart.svg" />
+    <None Include="Resources\pieseries.svg" />
+    <None Include="Resources\YelowOrWhite.png" />
+    <EmbeddedResource Include="Sql\IsSendNakladeLine.sql" />
+    <EmbeddedResource Include="Sql\IsSendNaklad.sql" />
+    <None Include="Resources\buynow.svg" />
+    <None Include="Resources\shopping_shoppingcart.svg" />
+    <EmbeddedResource Include="Sql\SchetLines.sql" />
+    <Content Include="Tools\Накладная.xltx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Расходы по проектам.xltx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Акт_на_списание_материалов_.xltx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\amGlobals\amGlobals.csproj">
+      <Project>{a69600fb-8789-4a7f-aed7-f22b6aee9ab3}</Project>
+      <Name>amGlobals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SC.Common\SC.Common.csproj">
+      <Project>{ea5792a0-3c8e-41f6-8804-6afa0af1f37f}</Project>
+      <Name>SC.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greren.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yelow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\belyj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XlsDn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XlsUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="V83">
+      <Guid>{98AC3B5B-5323-418F-8F07-E32F231D2393}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\лампочка выкл.png" />
+    <None Include="Resources\лампочка вкл.png" />
+    <None Include="Resources\лампочка крест %282%29.png" />
+    <None Include="Resources\Загрузка из 1С.png" />
+    <None Include="Resources\giphy-3.gif" />
+    <Content Include="Покупки2.ico" />
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

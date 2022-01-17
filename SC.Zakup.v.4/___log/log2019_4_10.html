@@ -1,0 +1,17 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Invalid column name 'Details'.<br>
+
+                select s.ID, su.Name [Поставщик], s.Details [Детализация], p.Name [Проект], s.Nomer [№ Счета], s.Data [Дата], s.Summa [Сумма], 0 [Оплачено] 
+                from Scheta s join Supplier su on s.Supplier_ID = su.ID join Project p on s.Project_ID = p.ID            <br>
+--[10.04.2019 21:08:04]--------------<br>
+
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Incorrect syntax near the keyword 'join'.<br>
+
+                select s.ID, su.Name [Поставщик], d.Name [Детализация], p.Name [Проект], s.Nomer [№ Счета], s.Data [Дата], s.Summa [Сумма], 0 [Оплачено] 
+                from Scheta s join Supplier su on s.Supplier_ID = su.ID join Project p on s.Project_ID = p.ID
+                outer join Details d on d.ID = s.Details_ID<br>
+--[10.04.2019 21:10:21]--------------<br>
+

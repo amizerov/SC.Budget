@@ -1,0 +1,21 @@
+17 830,00 ₽<br>
+--[19.04.2019 11:11:17]--------------<br>
+
+2 - 17 830,00<br>
+--[19.04.2019 11:11:17]--------------<br>
+
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Ambiguous column name 'dtc'.<br>
+
+		            select s.ID, su.Name [Поставщик], d.Name [Детализация], p.Name [Проект], 
+		            s.Nomer [№ Счета], s.DataCreate [Дата], s.DataPayTo [Оплата до], 
+		            s.Summa [Сумма], Oplata [Оплачено], s.Summa - Oplata [Остаток], [User], dtc, dtu
+                    from Scheta s 
+		            left join Supplier su on s.Supplier_ID = su.ID 
+		            left join Project p on s.Project_ID = p.ID
+		            left join Detail d on d.ID = s.Detail_ID
+                    order by [Дата] desc
+                <br>
+--[19.04.2019 11:22:11]--------------<br>
+

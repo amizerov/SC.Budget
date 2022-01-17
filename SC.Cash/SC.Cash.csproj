@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E15DDB19-9F95-4B80-9A3A-3BC56E5DC81C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SC.Cash</RootNamespace>
+    <AssemblyName>SC.Cash</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Касса.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v19.1, Version=19.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.5.1\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="linq2db, Version=2.9.4.0, Culture=neutral, PublicKeyToken=e41013125f9e410a, processorArchitecture=MSIL">
+      <HintPath>..\packages\linq2db.2.9.4\lib\net46\linq2db.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\OperationCash.cs" />
+    <Compile Include="Model\Debt.cs" />
+    <Compile Include="Services\OperationCashValidator.cs" />
+    <Compile Include="Views\FrmAmountOutNoToUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmAmountOutNoToUser.Designer.cs">
+      <DependentUpon>FrmAmountOutNoToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmCash.Designer.cs">
+      <DependentUpon>FrmCash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmEditAccaunt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmEditAccaunt.Designer.cs">
+      <DependentUpon>FrmEditAccaunt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmSalary.Designer.cs">
+      <DependentUpon>FrmSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmDebt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmDebt.Designer.cs">
+      <DependentUpon>FrmDebt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmEditOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmEditOperation.Designer.cs">
+      <DependentUpon>FrmEditOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageOperations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PageOperations.Designer.cs">
+      <DependentUpon>PageOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageRequests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PageRequests.Designer.cs">
+      <DependentUpon>PageRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\Excel.cs" />
+    <EmbeddedResource Include="Views\FrmAmountOutNoToUser.resx">
+      <DependentUpon>FrmAmountOutNoToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmCash.resx">
+      <DependentUpon>FrmCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmEditAccaunt.resx">
+      <DependentUpon>FrmEditAccaunt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmSalary.resx">
+      <DependentUpon>FrmSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmDebt.resx">
+      <DependentUpon>FrmDebt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PageOperations.resx">
+      <DependentUpon>PageOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PageRequests.resx">
+      <DependentUpon>PageRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sql\Managers.sql" />
+    <EmbeddedResource Include="Views\FrmEditOperation.resx">
+      <DependentUpon>FrmEditOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SC.Cash.Model.CAccountViewModel.datasource" />
+    <None Include="Properties\DataSources\SC.Cash.Model.CDebt.datasource" />
+    <None Include="Properties\DataSources\SC.Cash.Model.COperationCash.datasource" />
+    <None Include="Properties\DataSources\SC.Cash.Model.COperationViewModel.datasource" />
+    <None Include="Properties\DataSources\SC.Cash.Model.OperationViewModel.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.COperation.datasource" />
+    <None Include="Properties\DataSources\SC.Common.Model.CRequestOpViewModel.datasource" />
+    <None Include="Resources\banknotes.png" />
+    <EmbeddedResource Include="Sql\OperationsCash.sql" />
+    <None Include="Resources\ReportMoney.png" />
+    <None Include="Sql\Bosses.sql" />
+    <None Include="Sql\LastRequest_Out.sql" />
+    <None Include="Resources\ResetSettings.png" />
+    <None Include="Resources\Note.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Debt.png" />
+    <EmbeddedResource Include="Sql\Debts.sql" />
+    <None Include="Resources\addfile_32x32.png" />
+    <None Include="Resources\addfile_16x16.png" />
+    <None Include="Resources\addnewdatasource_32x32.png" />
+    <None Include="Resources\addnewdatasource_16x16.png" />
+    <None Include="Resources\editdatasource_32x32.png" />
+    <None Include="Resources\editdatasource_16x16.png" />
+    <None Include="Resources\deletedatasource_32x32.png" />
+    <None Include="Resources\deletedatasource_16x16.png" />
+    <None Include="Resources\notes_32x32.png" />
+    <None Include="Resources\notes_16x16.png" />
+    <None Include="Resources\loadfrom_32x32.png" />
+    <None Include="Resources\loadfrom_16x16.png" />
+    <None Include="Resources\close_32x32.png" />
+    <None Include="Resources\close_16x16.png" />
+    <None Include="Resources\recurrence_32x32.png" />
+    <None Include="Resources\recurrence_16x16.png" />
+    <None Include="Resources\payment.svg" />
+    <None Include="Resources\payment.png" />
+    <None Include="Resources\addnewdatasource_32x321.png" />
+    <None Include="Resources\addnewdatasource_16x161.png" />
+    <None Include="Resources\bo_pivotchart.svg" />
+    <None Include="Resources\switchtimescalesto_32x32.png" />
+    <None Include="Resources\switchtimescalesto_16x16.png" />
+    <None Include="Resources\business_calculator.svg" />
+    <None Include="Resources\bo_address.svg" />
+    <None Include="Resources\mailmerge.svg" />
+    <None Include="Resources\accounting.svg" />
+    <Content Include="Tools\cash_order.xltx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\Свис_Выписка_по_счету_.xltx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sql\Accounts.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upd60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sql\Requests_In.sql" />
+    <None Include="Resources\Clock.png" />
+    <None Include="Resources\Ok.png" />
+    <None Include="Resources\Rejected.png" />
+    <None Include="Resources\Money.png" />
+    <None Include="Resources\Cancel32.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\In.png" />
+    <None Include="Resources\Out.png" />
+    <None Include="Resources\Report.png" />
+    <Content Include="Касса.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\amGlobals\amGlobals.csproj">
+      <Project>{A69600FB-8789-4A7F-AED7-F22B6AEE9AB3}</Project>
+      <Name>amGlobals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SC.Common\SC.Common.csproj">
+      <Project>{ea5792a0-3c8e-41f6-8804-6afa0af1f37f}</Project>
+      <Name>SC.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,130 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Не удалось привязать составной идентификатор "resOp.Resource_ID".<br>
+with projects as(
+	 select 0 Type, 
+		 'Project ' + CAST(pr.ID AS nvarchar) ID, 
+		 null ParentID, null ResOP_ID, null Object_ID,
+		 null ObjectNameForResOp, null Manager_ID, 0 IsStaff,
+		 null PositionID, null Resource_ID, pr.Name Name,
+		 'Объектов: ' + CAST(Count(obj.Id) AS nvarchar) Phone,
+		 null PositionName, SUM(okl.Summa) Salary, SUM(res.OfficialSalary) OfficialSalary,
+		 SUM(ResOP.RateDays) RateDays, SUM(ResOP.FactDays) FactDays, SUM(ResOP.FactSalary) FactSalary, 
+		 SUM(ResOP.Avans) Avans, SUM(ResOP.Penalty) Penalty, SUM(ResOP.Premium) Premium,
+		 null Comment, null Month
+	 from Project pr
+		 left join Object obj on obj.Project_ID = pr.ID
+		 left join Resource res on res.Object_ID = obj.ID
+		 left join (select * from ResOP where Month(ResOP.Month) = 9 and YEAR(ResOP.Month) = 2019) resOp on resOp.Object_ID = obj.ID
+		 left join Position pos on pos.ID = resOp.Position_ID
+		 left join Oklad okl on okl.Object_ID = obj.ID and okl.Position_ID = pos.ID
+	 where pr.Rukovod_ID = 63
+	 group by pr.ID, pr.Name
+),
+objs as (
+	 select 1 Type, 'Object ' + CAST(obj.ID AS nvarchar) ID, 'Project ' + CAST(pr.ID AS nvarchar) ParentID, 
+		 null ResOP_ID, obj.ID Object_ID, obj.Address ObjectNameForResOp, obj.Manager_ID Manager_ID,
+		 0 IsStaff, null PositionID, null Resource_ID, obj.Address Name,
+		 'Сотрудников: ' + CAST(Count(resOp.Id) AS nvarchar) Phone,
+		 null PositionName, SUM(okl.Summa) Salary, SUM(res.OfficialSalary) OfficialSalary, SUM(ResOP.RateDays) RateDays, 
+		 SUM(ResOP.FactDays) FactDays, SUM(ResOP.FactSalary) FactSalary, SUM(ResOP.Avans) Avans, SUM(ResOP.Penalty) Penalty, 
+		 SUM(ResOP.Premium) Premium, null Comment, null Month
+	 from Object obj
+		 left join Project pr on obj.Project_ID = pr.ID
+		 left join Resource res on res.ID = resOp.Resource_ID
+		 left join (select * from ResOP where Month(ResOP.Month) = 9 and YEAR(ResOP.Month) = 2019) resOp on resOp.Object_ID = obj.ID
+		 left join Position pos on pos.ID = resOp.Position_ID
+		 left join Oklad okl on okl.Object_ID = obj.ID and okl.Position_ID = pos.ID
+	 where pr.Rukovod_ID = 63
+	 group by pr.ID, obj.ID, obj.Address, obj.Manager_ID
+),
+resOps as (
+	 select 2 Type, 'ResOp ' + CAST(resOp.ID AS nvarchar) ID, 'Object ' + CAST(obj.ID AS nvarchar) ParentID, 
+		 resOp.ID ResOP_ID, obj.ID Object_ID, obj.Address ObjectNameForResOp, obj.Manager_ID Manager_ID,
+		 case when res.Manager_ID is null then 1 else 0 end IsStaff,
+		  pos.ID PositionID, res.ID Resource_ID, res.Name Name, res.Phone Phone, 
+		 pos.Name PositionName, okl.Summa Salary, res.OfficialSalary OfficialSalary, ResOP.RateDays RateDays, 
+		 ResOP.FactDays FactDays, ResOP.FactSalary FactSalary, ResOP.Avans Avans, 
+		 ResOP.Penalty Penalty, ResOP.Premium Premium, ResOP.Comment Comment, ResOP.Month Month
+	 from (select * from ResOP where Month(ResOP.Month) = 9 and YEAR(ResOP.Month) = 2019) resOp
+		 left join Object obj on resOp.Object_ID = obj.ID
+		 left join Project pr on obj.Project_ID = pr.ID
+		 left join Position pos on pos.ID = resOp.Position_ID
+		 left join Oklad okl on okl.Object_ID = obj.ID and okl.Position_ID = pos.ID
+		 left join Resource res on res.ID = resOp.Resource_ID
+	 where pr.Rukovod_ID = 63
+)
+select * from projects
+union all select * from objs
+union all select * from resOps
+order by Name<br>
+--[26.09.2019 23:10:21]--------------<br>
+
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Столбец "ID" для "objs" указан более одного раза.
+Столбец "ID" для "resOps" указан более одного раза.<br>
+with projects as(
+	 select 0 Type, 
+		 'Project ' + CAST(pr.ID AS nvarchar) ID,
+		 'Project ' + CAST(pr.ID AS nvarchar) Group_ID,
+		 null ParentID, null ResOP_ID, null Object_ID,
+		 null ObjectNameForResOp, null Manager_ID, 0 IsStaff,
+		 null PositionID, null Resource_ID, pr.Name Name,
+		 'Объектов: ' + CAST(Count(obj.Id) AS nvarchar) Phone,
+		 null PositionName, SUM(okl.Summa) Salary, SUM(res.OfficialSalary) OfficialSalary,
+		 SUM(ResOP.RateDays) RateDays, SUM(ResOP.FactDays) FactDays, SUM(ResOP.FactSalary) FactSalary, 
+		 SUM(ResOP.Avans) Avans, SUM(ResOP.Penalty) Penalty, SUM(ResOP.Premium) Premium,
+		 null Comment, null Month
+	 from Project pr
+		 left join Object obj on obj.Project_ID = pr.ID
+		 left join (select * from ResOP where Month(ResOP.Month) = 9 and YEAR(ResOP.Month) = 2019) resOp on resOp.Object_ID = obj.ID
+		 left join Resource res on res.Object_ID = obj.ID
+		 left join Position pos on pos.ID = resOp.Position_ID
+		 left join Oklad okl on okl.Object_ID = obj.ID and okl.Position_ID = pos.ID
+	 where pr.Rukovod_ID = 63
+	 group by pr.ID, pr.Name
+),
+objs as (
+	 select 1 Type, 'Object ' + CAST(obj.ID AS nvarchar) ID,
+		 'Object ' + CAST(obj.ID AS nvarchar) Group_ID,
+		 'Object ' + CAST(obj.ID AS nvarchar) ID, 'Project ' + CAST(pr.ID AS nvarchar) ParentID, 
+		 null ResOP_ID, obj.ID Object_ID, obj.Address ObjectNameForResOp, obj.Manager_ID Manager_ID,
+		 0 IsStaff, null PositionID, null Resource_ID, obj.Address Name,
+		 'Сотрудников: ' + CAST(Count(resOp.Id) AS nvarchar) Phone,
+		 null PositionName, SUM(okl.Summa) Salary, SUM(res.OfficialSalary) OfficialSalary, SUM(ResOP.RateDays) RateDays, 
+		 SUM(ResOP.FactDays) FactDays, SUM(ResOP.FactSalary) FactSalary, SUM(ResOP.Avans) Avans, SUM(ResOP.Penalty) Penalty, 
+		 SUM(ResOP.Premium) Premium, null Comment, null Month
+	 from Object obj
+		 left join Project pr on obj.Project_ID = pr.ID
+		 left join (select * from ResOP where Month(ResOP.Month) = 9 and YEAR(ResOP.Month) = 2019) resOp on resOp.Object_ID = obj.ID
+		 left join Resource res on res.ID = resOp.Resource_ID
+		 left join Position pos on pos.ID = resOp.Position_ID
+		 left join Oklad okl on okl.Object_ID = obj.ID and okl.Position_ID = pos.ID
+	 where pr.Rukovod_ID = 63
+	 group by pr.ID, obj.ID, obj.Address, obj.Manager_ID
+),
+resOps as (
+	 select 2 Type, 'ResOp ' + CAST(resOp.ID AS nvarchar) ID,
+		'ResOp ' + CAST(resOp.ID AS nvarchar) Group_ID,
+		 'ResOp ' + CAST(resOp.ID AS nvarchar) ID, 'Object ' + CAST(obj.ID AS nvarchar) ParentID, 
+		 resOp.ID ResOP_ID, obj.ID Object_ID, obj.Address ObjectNameForResOp, obj.Manager_ID Manager_ID,
+		 case when res.Manager_ID is null then 1 else 0 end IsStaff,
+		  pos.ID PositionID, res.ID Resource_ID, res.Name Name, res.Phone Phone, 
+		 pos.Name PositionName, okl.Summa Salary, res.OfficialSalary OfficialSalary, ResOP.RateDays RateDays, 
+		 ResOP.FactDays FactDays, ResOP.FactSalary FactSalary, ResOP.Avans Avans, 
+		 ResOP.Penalty Penalty, ResOP.Premium Premium, ResOP.Comment Comment, ResOP.Month Month
+	 from (select * from ResOP where Month(ResOP.Month) = 9 and YEAR(ResOP.Month) = 2019) resOp
+		 left join Object obj on resOp.Object_ID = obj.ID
+		 left join Project pr on obj.Project_ID = pr.ID
+		 left join Position pos on pos.ID = resOp.Position_ID
+		 left join Oklad okl on okl.Object_ID = obj.ID and okl.Position_ID = pos.ID
+		 left join Resource res on res.ID = resOp.Resource_ID
+	 where pr.Rukovod_ID = 63
+)
+select * from projects
+union all select * from objs
+union all select * from resOps
+order by Name<br>
+--[26.09.2019 23:21:59]--------------<br>
+

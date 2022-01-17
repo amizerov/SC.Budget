@@ -1,0 +1,34 @@
+<br>
+--[datopen(2)(1)]-------------<br>
+(1) Invalid object name 'StRash'.<br>
+
+		            select s.ID, su.Name [Поставщик], d.Name [Детализация], r.Name [Статья расхода], 
+                    p.Name [Проект], s.Nomer [№ Счета], s.DataCreate [Дата], s.DataPayTo [Оплата до], 
+		            s.Summa [Сумма], Oplata [Оплачено], s.Summa - Oplata [Остаток], s.[User], s.dtc, s.dtu
+                    from Scheta s 
+		            left join Supplier su on s.Supplier_ID = su.ID 
+		            left join Project p on s.Project_ID = p.ID
+		            left join Detail d on d.ID = s.Detail_ID
+		            left join StRash r on d.ID = s.StRash_ID
+                    order by [Дата] desc
+                <br>
+--[13.06.2019 14:19:53]--------------<br>
+
+2 400,00 ₽<br>
+--[13.06.2019 19:06:28]--------------<br>
+
+2 - 2 400,00<br>
+--[13.06.2019 19:06:28]--------------<br>
+
+100 000,00 ₽<br>
+--[13.06.2019 19:06:49]--------------<br>
+
+2 - 100 000,00<br>
+--[13.06.2019 19:06:49]--------------<br>
+
+2 400,00 ₽<br>
+--[13.06.2019 19:06:56]--------------<br>
+
+2 - 2 400,00<br>
+--[13.06.2019 19:06:56]--------------<br>
+
